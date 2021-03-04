@@ -1,6 +1,7 @@
 package com.pedaledal.Pedaledal.models.pedals;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.pedaledal.Pedaledal.models.manufacturers.Manufacturer;
 import com.pedaledal.Pedaledal.models.users.User;
 import org.hibernate.annotations.Cascade;
 
@@ -19,9 +20,6 @@ public class Pedal {
 
     @Column(name = "name")
     private String name;
-
-    @Column(name = "manufacturer")
-    private String manufacturer;
 
     @Column(name = "description")
     private String description;
@@ -73,33 +71,32 @@ public class Pedal {
     @JsonIgnoreProperties({"pedals"})
     private User user;
 
-//    @ManyToMany
-//    @JsonIgnoreProperties({"pedals"})
-//    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-//    @JoinTable(
-//            name = "pedals",
-//            joinColumns = {
-//                    @JoinColumn(
-//                            name="pedal_id",
-//                            nullable = false,
-//                            updatable = false
-//                    )
-//            },
-//            inverseJoinColumns = {
-//                    @JoinColumn(
-//                            name = "manufacturer_id",
-//                            nullable = false,
-//                            updatable = false
-//                    )
-//            }
-//    )
-//    private List<Pedal> pedals;
+    @ManyToMany
+    @JsonIgnoreProperties({"pedals"})
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @JoinTable(
+            name = "pedals",
+            joinColumns = {
+                    @JoinColumn(
+                            name="pedal_id",
+                            nullable = false,
+                            updatable = false
+                    )
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(
+                            name = "manufacturer_id",
+                            nullable = false,
+                            updatable = false
+                    )
+            }
+    )
+    private List<Manufacturer> manufacturers;
 
     public Pedal() {};
 
-    public Pedal(String name, String manufacturer, String description, String comment, Boolean owned, EffectType effectType, Integer rating, String image, Integer retailPrice, Integer usedPrice, Integer length, Integer width, Integer height, Boolean midi, Boolean stereo, String jackPlacement, Boolean expressionInput) {
+    public Pedal(String name, String description, String comment, Boolean owned, EffectType effectType, Integer rating, String image, Integer retailPrice, Integer usedPrice, Integer length, Integer width, Integer height, Boolean midi, Boolean stereo, String jackPlacement, Boolean expressionInput, List<Manufacturer> manufacturers) {
         this.name = name;
-        this.manufacturer = manufacturer;
         this.description = description;
         this.comment = comment;
         this.owned = owned;
@@ -115,7 +112,7 @@ public class Pedal {
         this.stereo = stereo;
         this.jackPlacement = jackPlacement;
         this.expressionInput = expressionInput;
-//        this.pedals = new ArrayList<User>();
+        this.manufacturers = new ArrayList<Manufacturer>();
     }
 
     public Long getId() {
@@ -132,14 +129,6 @@ public class Pedal {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
     }
 
     public String getDescription() {
@@ -276,5 +265,13 @@ public class Pedal {
 
     public void setExpressionInput(Boolean expressionInput) {
         this.expressionInput = expressionInput;
+    }
+
+    public List<Manufacturer> getManufacturers() {
+        return manufacturers;
+    }
+
+    public void setManufacturers(List<Manufacturer> manufacturers) {
+        this.manufacturers = manufacturers;
     }
 }

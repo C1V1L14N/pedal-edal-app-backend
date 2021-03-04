@@ -53,7 +53,6 @@ public class PedalController {
     public ResponseEntity<Pedal> putAnimal(@RequestBody Pedal pedal, @PathVariable Long id){
         Pedal pedalToUpdate = pedalRepository.findById(id).get();
         pedalToUpdate.setName(pedal.getName());
-        pedalToUpdate.setManufacturer(pedal.getManufacturer());
         pedalToUpdate.setDescription(pedal.getDescription());
         pedalToUpdate.setComment(pedal.getComment());
         pedalToUpdate.setOwned(pedal.getOwned());
