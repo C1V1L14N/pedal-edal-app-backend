@@ -1,9 +1,7 @@
 package com.pedaledal.Pedaledal.controllers;
 
 import com.pedaledal.Pedaledal.models.manufacturers.Manufacturer;
-import com.pedaledal.Pedaledal.models.users.User;
 import com.pedaledal.Pedaledal.repositories.ManufacturerRepository;
-import com.pedaledal.Pedaledal.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
