@@ -43,8 +43,8 @@ public class DataLoader implements ApplicationRunner {
         Manufacturer ChaseBlissAudio = new Manufacturer("Chase Bliss Audio", "Awesome pedal producer", "www.cba.com");
         manufacturerRepository.save(ChaseBlissAudio);
 
-        Pedal pedal = new Pedal("Blooper", "Fancy", "One of my favourites", true, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true, new ArrayList<Manufacturer>(Arrays.asList(ChaseBlissAudio)));
-        pedalRepository.save(pedal);
+//        Pedal pedal = new Pedal("Blooper", "Fancy", "One of my favourites", true, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true, new ArrayList<Manufacturer>(Arrays.asList(ChaseBlissAudio)));
+//        pedalRepository.save(pedal);
 
 
     }
