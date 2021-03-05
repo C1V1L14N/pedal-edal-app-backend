@@ -2,7 +2,6 @@ package com.pedaledal.Pedaledal.repositories;
 
 import com.pedaledal.Pedaledal.models.pedals.EffectType;
 import com.pedaledal.Pedaledal.models.pedals.Pedal;
-import com.pedaledal.Pedaledal.models.manufacturers.Manufacturer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
