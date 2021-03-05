@@ -28,7 +28,7 @@ public class Manufacturer {
 
     @ManyToMany
     @JsonIgnoreProperties({"manufacturers"})
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
             name = "manufacturers",
             joinColumns = {
