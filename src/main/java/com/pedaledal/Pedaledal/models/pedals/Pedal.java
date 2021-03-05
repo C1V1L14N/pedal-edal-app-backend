@@ -76,7 +76,7 @@ public class Pedal {
     @JsonIgnoreProperties({"pedals"})
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinTable(
-            name = "pedals",
+            name = "manufacturers_pedals",
             joinColumns = {
                     @JoinColumn(
                             name="pedal_id",
@@ -228,14 +228,6 @@ public class Pedal {
         this.user = user;
     }
 
-//    public List<Pedal> getPedals() {
-//        return pedals;
-//    }
-
-//    public void setPedals(List<Pedal> pedals) {
-//        this.pedals = pedals;
-//    }
-
     public Boolean getMidi() {
         return midi;
     }
@@ -274,5 +266,9 @@ public class Pedal {
 
     public void setManufacturers(List<Manufacturer> manufacturers) {
         this.manufacturers = manufacturers;
+    }
+
+    public void addManufacturer(Manufacturer manufacturer) {
+        this.manufacturers.add(manufacturer);
     }
 }

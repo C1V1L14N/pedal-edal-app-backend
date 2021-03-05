@@ -30,7 +30,7 @@ public class Manufacturer {
     @JsonIgnoreProperties({"manufacturers"})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
-            name = "manufacturers",
+            name = "manufacturers_pedals",
             joinColumns = {
                     @JoinColumn(
                             name="manufacturer_id",
@@ -41,7 +41,7 @@ public class Manufacturer {
             inverseJoinColumns = {
                     @JoinColumn(
                             name = "pedal_id",
-                            nullable = true,
+                            nullable = false,
                             updatable = false
                     )
             }
@@ -95,5 +95,9 @@ public class Manufacturer {
 
     public void setPedals(List<Pedal> pedals) {
         this.pedals = pedals;
+    }
+
+    public void addPedal(Pedal pedal) {
+        this.pedals.add(pedal);
     }
 }

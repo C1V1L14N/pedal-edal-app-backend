@@ -8,11 +8,13 @@ import com.pedaledal.Pedaledal.models.users.User;
 import com.pedaledal.Pedaledal.repositories.PedalRepository;
 import com.pedaledal.Pedaledal.repositories.UserRepository;
 import com.pedaledal.Pedaledal.repositories.ManufacturerRepository;
-//import jdk.nashorn.internal.codegen.ConstantData;
+import com.sun.tools.javac.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,9 +45,17 @@ public class DataLoader implements ApplicationRunner {
         Manufacturer ChaseBlissAudio = new Manufacturer("Chase Bliss Audio", "Awesome pedal producer", "www.cba.com");
         manufacturerRepository.save(ChaseBlissAudio);
 
-//        Pedal pedal = new Pedal("Blooper", "Fancy", "One of my favourites", true, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true, new ArrayList<Manufacturer>(Arrays.asList(ChaseBlissAudio)));
-//        pedalRepository.save(pedal);
+        Manufacturer boss = new Manufacturer("Boss", "The best pedal cunts", "www.boss-pedals.com");
+        manufacturerRepository.save(boss);
 
+        Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true, new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
+        pedalRepository.save(blooper);
+
+        blooper.addManufacturer(ChaseBlissAudio);
+
+        ChaseBlissAudio.addPedal(blooper);
+
+        andy.addPedal(blooper);
 
     }
 
