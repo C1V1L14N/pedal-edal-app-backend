@@ -17,9 +17,9 @@ public class ManufacturerController {
 
     @GetMapping(value = "/manufacturers")
     public ResponseEntity<List<Manufacturer>> getAllManufacturersWithFilter(
-            @RequestParam(name = "manufacturername", required = false) String manufacturername){
-        if (manufacturername != null){
-            return new ResponseEntity<>(manufacturerRepository.findManufacturerByName(manufacturername), HttpStatus.OK);
+            @RequestParam(name = "manufacturerName", required = false) String manufacturerName){
+        if (manufacturerName != null){
+            return new ResponseEntity<>(manufacturerRepository.findManufacturerByName(manufacturerName), HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(manufacturerRepository.findAll(), HttpStatus.OK);

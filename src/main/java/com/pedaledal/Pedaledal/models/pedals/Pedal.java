@@ -96,7 +96,7 @@ public class Pedal {
 
     public Pedal() {};
 
-    public Pedal(String name, String description, String comment, Boolean owned, EffectType effectType, Integer rating, String image, Integer retailPrice, Integer usedPrice, Integer length, Integer width, Integer height, Boolean midi, Boolean stereo, String jackPlacement, Boolean expressionInput, List<Manufacturer> manufacturers) {
+    public Pedal(String name, String description, String comment, Boolean owned, EffectType effectType, Integer rating, String image, Integer retailPrice, Integer usedPrice, Integer length, Integer width, Integer height, Boolean midi, Boolean stereo, String jackPlacement, Boolean expressionInput) {
         this.name = name;
         this.description = description;
         this.comment = comment;

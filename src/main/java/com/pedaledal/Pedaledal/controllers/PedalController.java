@@ -1,6 +1,9 @@
 package com.pedaledal.Pedaledal.controllers;
 
+import com.pedaledal.Pedaledal.models.manufacturers.Manufacturer;
+import com.pedaledal.Pedaledal.models.pedals.EffectType;
 import com.pedaledal.Pedaledal.models.pedals.Pedal;
+import com.pedaledal.Pedaledal.repositories.ManufacturerRepository;
 import com.pedaledal.Pedaledal.repositories.PedalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,11 +17,26 @@ public class PedalController {
     @Autowired
     PedalRepository pedalRepository;
 
+    @Autowired
+    ManufacturerRepository manufacturerRepository;
+
     @GetMapping(value = "/pedals")
     public ResponseEntity<List<Pedal>> getAllPedalsWithFilter(
-            @RequestParam(name = "pedalname", required = false) String pedalname){
-        if (pedalname != null){
-            return new ResponseEntity<>(pedalRepository.findPedalByName(pedalname), HttpStatus.OK);
+            @RequestParam(name = "pedalName", required = false) String pedalName,
+            @RequestParam(name = "manufacturerName", required = false) String manufacturerName,
+            @RequestParam(name = "rating", required = false) Integer rating,
+            @RequestParam(name = "type", required = false) EffectType type){
+        if (pedalName != null){
+            return new ResponseEntity<>(pedalRepository.findPedalByNameIgnoreCase(pedalName), HttpStatus.OK);
+        }
+        if (manufacturerName != null){
+            return new ResponseEntity<>(pedalRepository.findAllPedalsByManufacturersName(manufacturerName), HttpStatus.OK);
+        }
+        if (rating != null){
+            return new ResponseEntity<>(pedalRepository.findAllPedalsByRating(rating), HttpStatus.OK);
+        }
+        if (type != null){
+            return new ResponseEntity<>(pedalRepository.findAllPedalsByEffectType(type), HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(pedalRepository.findAll(), HttpStatus.OK);

@@ -48,14 +48,25 @@ public class DataLoader implements ApplicationRunner {
         Manufacturer boss = new Manufacturer("Boss", "The best pedal cunts", "www.boss-pedals.com");
         manufacturerRepository.save(boss);
 
-        Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true, new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
+        ArrayList<Manufacturer> blooperMans = new ArrayList<>();
+        blooperMans.add(ChaseBlissAudio);
+
+//        new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}}
+
+        Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(blooper);
 
-        blooper.addManufacturer(ChaseBlissAudio);
+//        blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
+//        pedalRepository.save(blooper);
 
-        ChaseBlissAudio.addPedal(blooper);
+        blooper.addManufacturer(boss);
+        pedalRepository.save(blooper);
 
         andy.addPedal(blooper);
+        userRepository.save(andy);
+
+        andy.setName("Dick face");
+        userRepository.save(andy);
 
     }
 
