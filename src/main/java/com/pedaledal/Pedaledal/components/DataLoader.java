@@ -3,6 +3,7 @@ package com.pedaledal.Pedaledal.components;
 import com.pedaledal.Pedaledal.models.manufacturers.Manufacturer;
 import com.pedaledal.Pedaledal.models.pedals.EffectType;
 import com.pedaledal.Pedaledal.models.pedals.Pedal;
+import com.pedaledal.Pedaledal.models.pedals.PedalCategory;
 import com.pedaledal.Pedaledal.models.users.AgeRange;
 import com.pedaledal.Pedaledal.models.users.User;
 import com.pedaledal.Pedaledal.repositories.PedalRepository;
@@ -53,8 +54,18 @@ public class DataLoader implements ApplicationRunner {
 
 //        new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}}
 
-        Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, PedalCategory.OTHER, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(blooper);
+
+        Pedal pedal1 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        pedalRepository.save(pedal1);
+        pedal1.addManufacturer(boss);
+        pedalRepository.save(pedal1);
+
+        Pedal pedal2 = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "", 11900, 5000, 122, 67, 40, false, false, "Side", false);
+        pedalRepository.save(pedal2);
+        pedal2.addManufacturer(boss);
+        pedalRepository.save(pedal2);
 
 //        blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
 //        pedalRepository.save(blooper);
@@ -63,9 +74,6 @@ public class DataLoader implements ApplicationRunner {
         pedalRepository.save(blooper);
 
         andy.addPedal(blooper);
-        userRepository.save(andy);
-
-        andy.setName("Dick face");
         userRepository.save(andy);
 
     }

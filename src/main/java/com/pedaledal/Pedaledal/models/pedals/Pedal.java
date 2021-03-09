@@ -31,6 +31,9 @@ public class Pedal {
     @Column(name = "owned")
     private Boolean owned;
 
+    @Column(name = "category")
+    private PedalCategory pedalCategory;
+
     @Column(name = "effect_type")
     private EffectType effectType;
 
@@ -96,11 +99,12 @@ public class Pedal {
 
     public Pedal() {};
 
-    public Pedal(String name, String description, String comment, Boolean owned, EffectType effectType, Integer rating, String image, Integer retailPrice, Integer usedPrice, Integer length, Integer width, Integer height, Boolean midi, Boolean stereo, String jackPlacement, Boolean expressionInput) {
+    public Pedal(String name, String description, String comment, Boolean owned, PedalCategory pedalCategory, EffectType effectType, Integer rating, String image, Integer retailPrice, Integer usedPrice, Integer length, Integer width, Integer height, Boolean midi, Boolean stereo, String jackPlacement, Boolean expressionInput) {
         this.name = name;
         this.description = description;
         this.comment = comment;
         this.owned = owned;
+        this.pedalCategory = pedalCategory;
         this.effectType = effectType;
         this.rating = rating;
         this.image = image;
@@ -122,6 +126,14 @@ public class Pedal {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public PedalCategory getPedalCategory() {
+        return pedalCategory;
+    }
+
+    public void setPedalCategory(PedalCategory pedalCategory) {
+        this.pedalCategory = pedalCategory;
     }
 
     public String getName() {
