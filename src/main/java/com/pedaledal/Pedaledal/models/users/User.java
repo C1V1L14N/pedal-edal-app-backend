@@ -2,6 +2,7 @@ package com.pedaledal.Pedaledal.models.users;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.pedaledal.Pedaledal.models.boards.Board;
 import com.pedaledal.Pedaledal.models.pedals.Pedal;
 
 import javax.persistence.*;
@@ -38,6 +39,10 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Pedal> pedals;
 
+    @JsonIgnoreProperties({"user"})
+    @OneToMany(mappedBy = "user")
+    private List<Board> boards;
+
     public User(){};
 
     public User(String name, String email, AgeRange ageRange, String location, String instrument, String faveEffect) {
@@ -48,6 +53,7 @@ public class User {
         this.instrument = instrument;
         this.faveEffect = faveEffect;
         this.pedals = new ArrayList<Pedal>();
+        this.boards = new ArrayList<Board>();
     }
 
     public Long getId() {
@@ -116,5 +122,13 @@ public class User {
 
     public void addPedal(Pedal pedal) {
         this.pedals.add(pedal);
+    }
+
+    public List<Board> getBoards() {
+        return boards;
+    }
+
+    public void setBoards(List<Board> boards) {
+        this.boards = boards;
     }
 }

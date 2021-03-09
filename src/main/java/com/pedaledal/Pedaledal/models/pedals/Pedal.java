@@ -1,6 +1,7 @@
 package com.pedaledal.Pedaledal.models.pedals;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.pedaledal.Pedaledal.models.boards.Board;
 import com.pedaledal.Pedaledal.models.manufacturers.Manufacturer;
 import com.pedaledal.Pedaledal.models.users.User;
 import org.hibernate.annotations.Cascade;
@@ -75,6 +76,11 @@ public class Pedal {
     @JsonIgnoreProperties({"pedals"})
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "board_id", nullable = true)
+    @JsonIgnoreProperties({"pedals"})
+    private Board board;
+
     @ManyToMany
     @JsonIgnoreProperties({"pedals"})
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
@@ -118,6 +124,8 @@ public class Pedal {
         this.jackPlacement = jackPlacement;
         this.expressionInput = expressionInput;
         this.manufacturers = new ArrayList<Manufacturer>();
+        this.board = board;
+        this.user = user;
     }
 
     public Long getId() {
@@ -282,5 +290,13 @@ public class Pedal {
 
     public void addManufacturer(Manufacturer manufacturer) {
         this.manufacturers.add(manufacturer);
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 }

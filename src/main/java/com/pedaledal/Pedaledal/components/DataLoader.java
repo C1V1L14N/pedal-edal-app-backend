@@ -1,11 +1,13 @@
 package com.pedaledal.Pedaledal.components;
 
+import com.pedaledal.Pedaledal.models.boards.Board;
 import com.pedaledal.Pedaledal.models.manufacturers.Manufacturer;
 import com.pedaledal.Pedaledal.models.pedals.EffectType;
 import com.pedaledal.Pedaledal.models.pedals.Pedal;
 import com.pedaledal.Pedaledal.models.pedals.PedalCategory;
 import com.pedaledal.Pedaledal.models.users.AgeRange;
 import com.pedaledal.Pedaledal.models.users.User;
+import com.pedaledal.Pedaledal.repositories.BoardRepository;
 import com.pedaledal.Pedaledal.repositories.PedalRepository;
 import com.pedaledal.Pedaledal.repositories.UserRepository;
 import com.pedaledal.Pedaledal.repositories.ManufacturerRepository;
@@ -32,6 +34,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     ManufacturerRepository manufacturerRepository;
+
+    @Autowired
+    BoardRepository boardRepository;
 
     public DataLoader(){}
 
@@ -70,11 +75,27 @@ public class DataLoader implements ApplicationRunner {
 //        blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
 //        pedalRepository.save(blooper);
 
+
         blooper.addManufacturer(boss);
         pedalRepository.save(blooper);
 
-        andy.addPedal(blooper);
+        andy.setPedals(new ArrayList<Pedal>(){{add(blooper);}});
         userRepository.save(andy);
+
+        andy.addPedal(pedal1);
+        userRepository.save(andy);
+
+        kenny.addPedal(blooper);
+        kenny.addPedal(pedal2);
+        userRepository.save(kenny);
+
+        Board board1 = new Board("boardy", 600, 350, andy);
+        boardRepository.save(board1);
+
+        board1.addBoardPedal(pedal1);
+        boardRepository.save(board1);
+        board1.addBoardPedal(pedal2);
+        boardRepository.save(board1);
 
     }
 
