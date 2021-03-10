@@ -43,7 +43,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Board> boards;
 
-    public User(){};
+    public User(){}
 
     public User(String name, String email, AgeRange ageRange, String location, String instrument, String faveEffect) {
         this.name = name;
@@ -104,6 +104,7 @@ public class User {
         this.faveEffect = faveEffect;
     }
 
+
     public List<Pedal> getPedals() {
         return pedals;
     }
@@ -112,16 +113,17 @@ public class User {
         this.pedals = pedals;
     }
 
+    public void addPedal(Pedal pedal) {
+        this.pedals.add(pedal);
+    }
+
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void addPedal(Pedal pedal) {
-        this.pedals.add(pedal);
     }
 
     public List<Board> getBoards() {

@@ -29,8 +29,9 @@ public class Board {
     @Column(name = "height")
     private Integer height;
 
-    @OneToMany(mappedBy = "board")
     @JsonIgnoreProperties({"board"})
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @OneToMany(mappedBy = "board")
     private List<Pedal> boardPedals;
 
     @ManyToOne
@@ -97,6 +98,10 @@ public class Board {
         this.boardPedals = pedals;
     }
 
+    public void addBoardPedal(Pedal pedal) {
+        this.boardPedals.add(pedal);
+    }
+
     public User getUser() {
         return user;
     }
@@ -105,8 +110,6 @@ public class Board {
         this.user = user;
     }
 
-    public void addBoardPedal(Pedal pedal) {
-        this.boardPedals.add(pedal);
-    }
+
 }
 
