@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.pedaledal.Pedaledal.models.pedals.Pedal;
 import com.pedaledal.Pedaledal.models.users.User;
 import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

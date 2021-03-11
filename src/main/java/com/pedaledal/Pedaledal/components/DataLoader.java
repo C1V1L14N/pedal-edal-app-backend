@@ -74,8 +74,8 @@ public class DataLoader implements ApplicationRunner {
 
         Pedal ds1 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(ds1);
-        ds1.addManufacturer(boss);
-        pedalRepository.save(ds1);
+        boss.addPedal(ds1);
+        manufacturerRepository.save(boss);
 
         Pedal deco = new Pedal("Deco", "Cool cool cool", "Love it", false, PedalCategory.SATURATION, EffectType.OVERDRIVE, 4, "", 27900, 18500, 115, 102, 45, false, true, "top", true);
         pedalRepository.save(deco);
