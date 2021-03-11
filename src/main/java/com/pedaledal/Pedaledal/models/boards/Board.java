@@ -29,8 +29,8 @@ public class Board {
     @Column(name = "height")
     private Integer height;
 
-    @JsonIgnoreProperties({"board"})
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @JsonIgnoreProperties({"board", "user", "image"})
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @OneToMany(mappedBy = "board")
     private List<Pedal> boardPedals;
 

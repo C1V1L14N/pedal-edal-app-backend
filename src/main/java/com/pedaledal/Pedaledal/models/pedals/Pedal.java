@@ -73,7 +73,7 @@ public class Pedal {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = true)
-    @JsonIgnoreProperties({"pedals"})
+    @JsonIgnoreProperties({"user"})
     private User user;
 
     @ManyToOne
@@ -83,7 +83,7 @@ public class Pedal {
 
     @ManyToMany
     @JsonIgnoreProperties({"pedals"})
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
             name = "manufacturers_pedals",
             joinColumns = {

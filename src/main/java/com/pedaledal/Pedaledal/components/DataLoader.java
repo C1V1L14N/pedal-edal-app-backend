@@ -74,7 +74,7 @@ public class DataLoader implements ApplicationRunner {
 
         Pedal ds1 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(ds1);
-        ds1.setManufacturers(boss);
+        ds1.addManufacturer(boss);
         pedalRepository.save(ds1);
 
         Pedal deco = new Pedal("Deco", "Cool cool cool", "Love it", false, PedalCategory.SATURATION, EffectType.OVERDRIVE, 4, "", 27900, 18500, 115, 102, 45, false, true, "top", true);
@@ -93,10 +93,10 @@ public class DataLoader implements ApplicationRunner {
         boardRepository.save(board2);
 
 //        USER PEDALS ADD
-//        andy.addPedal(ds1);
-//        ds1.setUser(andy);
-//        userRepository.save(andy);
-//        pedalRepository.save(ds1);
+        andy.addPedal(ds1);
+        ds1.setUser(andy);
+        userRepository.save(andy);
+        pedalRepository.save(ds1);
 
         andy.addPedal(deco);
         deco.setUser(andy);
@@ -112,8 +112,8 @@ public class DataLoader implements ApplicationRunner {
         blooper.setUser(kenny);
         userRepository.save(kenny);
         pedalRepository.save(blooper);
-//        ds1.setBoard(board1);
-//        pedalRepository.save(ds1);
+        ds1.setBoard(board1);
+        pedalRepository.save(ds1);
 
 
     }

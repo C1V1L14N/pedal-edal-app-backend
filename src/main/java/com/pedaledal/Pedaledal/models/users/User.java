@@ -35,7 +35,7 @@ public class User {
     @Column(name = "fave_effect")
     private String faveEffect;
 
-    @JsonIgnoreProperties({"user"})
+    @JsonIgnoreProperties({"user", "board"})
     @OneToMany(mappedBy = "user")
     private List<Pedal> pedals;
 
