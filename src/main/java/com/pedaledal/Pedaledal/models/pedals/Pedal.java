@@ -38,16 +38,16 @@ public class Pedal {
     @Column(name = "effect_type")
     private EffectType effectType;
 
-    @Column(name = "rating")
+    @Column(name = "rating", nullable = true)
     private Integer rating;
 
     @Column(name = "image")
     private String image;
 
-    @Column(name = "retail_price")
+    @Column(name = "retail_price", nullable = true)
     private Integer retailPrice;
 
-    @Column(name = "used_price")
+    @Column(name = "used_price", nullable = true)
     private Integer usedPrice;
 
     @Column(name = "length")

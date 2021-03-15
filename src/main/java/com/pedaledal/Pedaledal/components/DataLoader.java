@@ -59,35 +59,38 @@ public class DataLoader implements ApplicationRunner {
         Manufacturer strymon = new Manufacturer("Strymon", "Expensive", "Webshite");
         manufacturerRepository.save(strymon);
 
+        Manufacturer cooperFX = new Manufacturer("Cooper FX", "Canadian", "www.canadian-pedals.com");
+        manufacturerRepository.save(cooperFX);
+
 
 //        PEDALS
         Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, PedalCategory.OTHER, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(blooper);
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
         pedalRepository.save(blooper);
-//        ChaseBlissAudio.addPedal(blooper);
-//        manufacturerRepository.save(ChaseBlissAudio);
+
 
         Pedal mt2w = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "", 11900, 5000, 122, 67, 40, false, false, "Side", false);
         pedalRepository.save(mt2w);
         mt2w.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
         pedalRepository.save(mt2w);
-//        boss.addPedal(mt2w);
-//        manufacturerRepository.save(boss);
+
 
         Pedal ds1 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(ds1);
         ds1.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
         pedalRepository.save(ds1);
-//        boss.addPedal(ds1);
-//        manufacturerRepository.save(boss);
+
 
         Pedal deco = new Pedal("Deco", "Cool cool cool", "Love it", false, PedalCategory.SATURATION, EffectType.OVERDRIVE, 4, "", 27900, 18500, 115, 102, 45, false, true, "top", true);
         pedalRepository.save(deco);
         deco.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
         pedalRepository.save(deco);
-//        strymon.addPedal(deco);
-//        manufacturerRepository.save(strymon);
+
+        Pedal generationLoss = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "", 50000, null, 122, 67, 40, true, true, "side", true);
+        pedalRepository.save(generationLoss);
+        generationLoss.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}{add(cooperFX);}});
+        pedalRepository.save(generationLoss);
 
 
 //        BOARDS
@@ -122,6 +125,8 @@ public class DataLoader implements ApplicationRunner {
 
         ds1.setBoard(board1);
         pedalRepository.save(ds1);
+        deco.setBoard(board1);
+        pedalRepository.save(deco);
 
         blooper.setBoard(board2);
         pedalRepository.save(blooper);
