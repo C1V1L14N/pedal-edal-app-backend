@@ -11,7 +11,6 @@ import com.pedaledal.Pedaledal.repositories.BoardRepository;
 import com.pedaledal.Pedaledal.repositories.PedalRepository;
 import com.pedaledal.Pedaledal.repositories.UserRepository;
 import com.pedaledal.Pedaledal.repositories.ManufacturerRepository;
-import com.sun.tools.javac.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -20,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 
 @Component
@@ -64,23 +63,31 @@ public class DataLoader implements ApplicationRunner {
 //        PEDALS
         Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, PedalCategory.OTHER, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(blooper);
-        ChaseBlissAudio.addPedal(blooper);
-        manufacturerRepository.save(ChaseBlissAudio);
+        blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
+        pedalRepository.save(blooper);
+//        ChaseBlissAudio.addPedal(blooper);
+//        manufacturerRepository.save(ChaseBlissAudio);
 
         Pedal mt2w = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "", 11900, 5000, 122, 67, 40, false, false, "Side", false);
         pedalRepository.save(mt2w);
-        boss.addPedal(mt2w);
-        manufacturerRepository.save(boss);
+        mt2w.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
+        pedalRepository.save(mt2w);
+//        boss.addPedal(mt2w);
+//        manufacturerRepository.save(boss);
 
         Pedal ds1 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(ds1);
-        boss.addPedal(ds1);
-        manufacturerRepository.save(boss);
+        ds1.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
+        pedalRepository.save(ds1);
+//        boss.addPedal(ds1);
+//        manufacturerRepository.save(boss);
 
         Pedal deco = new Pedal("Deco", "Cool cool cool", "Love it", false, PedalCategory.SATURATION, EffectType.OVERDRIVE, 4, "", 27900, 18500, 115, 102, 45, false, true, "top", true);
         pedalRepository.save(deco);
-        strymon.addPedal(deco);
-        manufacturerRepository.save(strymon);
+        deco.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
+        pedalRepository.save(deco);
+//        strymon.addPedal(deco);
+//        manufacturerRepository.save(strymon);
 
 
 //        BOARDS
@@ -112,8 +119,17 @@ public class DataLoader implements ApplicationRunner {
         blooper.setUser(kenny);
         userRepository.save(kenny);
         pedalRepository.save(blooper);
+
         ds1.setBoard(board1);
         pedalRepository.save(ds1);
+
+        blooper.setBoard(board2);
+        pedalRepository.save(blooper);
+        mt2w.setBoard(board2);
+        pedalRepository.save(mt2w);
+        ds1.setBoard(board2);
+        pedalRepository.save(ds1);
+
 
 
     }
