@@ -87,6 +87,11 @@ public class DataLoader implements ApplicationRunner {
         deco.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
         pedalRepository.save(deco);
 
+        Pedal elCapistan = new Pedal("el Capistan", "Go from the sound of a pristine, studio-quality tape machine to the heavily fluctuating sound of a machine in need of service. Get the full bodied sound of fresh tape all the way to the gnarled qualities of worn out tape.", "Love it", false, PedalCategory.DELAY, EffectType.DIGITAL, 5, "", 29900, 22000, 115, 102, 45, false, true, "top", true);
+        pedalRepository.save(elCapistan);
+        elCapistan.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
+        pedalRepository.save(elCapistan);
+
         Pedal generationLoss = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "", 50000, null, 122, 67, 40, true, true, "side", true);
         pedalRepository.save(generationLoss);
         generationLoss.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}{add(cooperFX);}});
