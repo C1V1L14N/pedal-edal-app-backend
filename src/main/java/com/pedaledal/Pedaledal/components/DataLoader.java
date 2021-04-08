@@ -67,40 +67,40 @@ public class DataLoader implements ApplicationRunner {
 
 
 //        PEDALS
-        Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, PedalCategory.OTHER, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, PedalCategory.OTHER, EffectType.LOOPER, 5, "/PedalImages/chasebliss-blooper.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(blooper);
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
         pedalRepository.save(blooper);
 
-        Pedal colourBox = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal colourBox = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "/PedalImages/jhs-colourbox.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(colourBox);
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(colourBox);
 
 
-        Pedal mt2w = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "", 11900, 5000, 122, 67, 40, false, false, "Side", false);
+        Pedal mt2w = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "/PedalImages/boss-mt2w.png", 11900, 5000, 122, 67, 40, false, false, "Side", false);
         pedalRepository.save(mt2w);
         mt2w.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
         pedalRepository.save(mt2w);
 
 
-        Pedal ds1 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal ds1 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "/PedalImages/boss-ds1.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(ds1);
         ds1.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
         pedalRepository.save(ds1);
 
 
-        Pedal deco = new Pedal("Deco", "Cool cool cool", "Love it", false, PedalCategory.SATURATION, EffectType.OVERDRIVE, 4, "", 27900, 18500, 115, 102, 45, false, true, "top", true);
+        Pedal deco = new Pedal("Deco", "Cool cool cool", "Love it", false, PedalCategory.SATURATION, EffectType.OVERDRIVE, 4, "/PedalImages/strymon-deco.png", 27900, 18500, 115, 102, 45, false, true, "top", true);
         pedalRepository.save(deco);
         deco.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
         pedalRepository.save(deco);
 
-        Pedal elCapistan = new Pedal("el Capistan", "Go from the sound of a pristine, studio-quality tape machine to the heavily fluctuating sound of a machine in need of service. Get the full bodied sound of fresh tape all the way to the gnarled qualities of worn out tape.", "Love it", false, PedalCategory.DELAY, EffectType.DIGITAL, 5, "", 29900, 22000, 115, 102, 45, false, true, "top", true);
+        Pedal elCapistan = new Pedal("el Capistan", "Go from the sound of a pristine, studio-quality tape machine to the heavily fluctuating sound of a machine in need of service. Get the full bodied sound of fresh tape all the way to the gnarled qualities of worn out tape.", "Love it", false, PedalCategory.DELAY, EffectType.DIGITAL, 5, "/PedalImages/strymon-elcap.png", 29900, 22000, 115, 102, 45, false, true, "top", true);
         pedalRepository.save(elCapistan);
         elCapistan.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
         pedalRepository.save(elCapistan);
 
-        Pedal generationLoss = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "", 50000, null, 122, 67, 40, true, true, "side", true);
+        Pedal generationLoss = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "/PedalImages/cooper-genloss.png", 50000, null, 122, 67, 40, true, true, "side", true);
         pedalRepository.save(generationLoss);
         generationLoss.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}{add(cooperFX);}});
         pedalRepository.save(generationLoss);
