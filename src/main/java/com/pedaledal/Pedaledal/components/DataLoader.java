@@ -62,12 +62,20 @@ public class DataLoader implements ApplicationRunner {
         Manufacturer cooperFX = new Manufacturer("Cooper FX", "Canadian", "www.canadian-pedals.com");
         manufacturerRepository.save(cooperFX);
 
+        Manufacturer jhs = new Manufacturer("JHS", "USA", "www.jhspedals.info");
+        manufacturerRepository.save(jhs);
+
 
 //        PEDALS
         Pedal blooper = new Pedal("Blooper", "Fancy", "One of my favourites", true, PedalCategory.OTHER, EffectType.LOOPER, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(blooper);
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
         pedalRepository.save(blooper);
+
+        Pedal colourBox = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        pedalRepository.save(colourBox);
+        blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
+        pedalRepository.save(colourBox);
 
 
         Pedal mt2w = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "", 11900, 5000, 122, 67, 40, false, false, "Side", false);
