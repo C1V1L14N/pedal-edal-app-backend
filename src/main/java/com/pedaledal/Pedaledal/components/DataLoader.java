@@ -77,6 +77,10 @@ public class DataLoader implements ApplicationRunner {
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(colourBox);
 
+        Pedal doubleBarrel = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        pedalRepository.save(doubleBarrel);
+        doubleBarrel.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
+        pedalRepository.save(doubleBarrel);
 
         Pedal mt2w = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "/PedalImages/boss-mt2w.png", 11900, 5000, 122, 67, 40, false, false, "Side", false);
         pedalRepository.save(mt2w);
@@ -136,6 +140,36 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(kenny);
         pedalRepository.save(blooper);
 
+        kenny.addPedal(elCapistan);
+        elCapistan.setUser(kenny);
+        userRepository.save(kenny);
+        pedalRepository.save(elCapistan);
+
+        kenny.addPedal(generationLoss);
+        generationLoss.setUser(kenny);
+        userRepository.save(kenny);
+        pedalRepository.save(generationLoss);
+
+        kenny.addPedal(ds1);
+        ds1.setUser(kenny);
+        userRepository.save(kenny);
+        pedalRepository.save(ds1);
+
+        kenny.addPedal(colourBox);
+        colourBox.setUser(kenny);
+        userRepository.save(kenny);
+        pedalRepository.save(colourBox);
+
+        kenny.addPedal(doubleBarrel);
+        doubleBarrel.setUser(kenny);
+        userRepository.save(kenny);
+        pedalRepository.save(doubleBarrel);
+
+        kenny.addPedal(deco);
+        deco.setUser(kenny);
+        userRepository.save(kenny);
+        pedalRepository.save(deco);
+
         ds1.setBoard(board1);
         pedalRepository.save(ds1);
         deco.setBoard(board1);
@@ -159,3 +193,6 @@ public class DataLoader implements ApplicationRunner {
 //        pedalRepository.save(blooper);
 
 }
+
+
+
