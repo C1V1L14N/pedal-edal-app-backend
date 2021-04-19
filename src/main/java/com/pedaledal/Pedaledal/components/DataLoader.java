@@ -193,12 +193,12 @@ public class DataLoader implements ApplicationRunner {
         pedalRepository.save(generationLoss2);
 
         andy.addPedal(colourBox2);
-        colourBox.setUser(andy);
+        colourBox2.setUser(andy);
         userRepository.save(andy);
         pedalRepository.save(colourBox2);
 
         andy.addPedal(doubleBarrel2);
-        doubleBarrel.setUser(andy);
+        doubleBarrel2.setUser(andy);
         userRepository.save(andy);
         pedalRepository.save(doubleBarrel2);
 
