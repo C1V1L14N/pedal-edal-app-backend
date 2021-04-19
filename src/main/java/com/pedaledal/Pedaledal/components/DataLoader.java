@@ -72,12 +72,12 @@ public class DataLoader implements ApplicationRunner {
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
         pedalRepository.save(blooper);
 
-        Pedal colourBox = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "/PedalImages/jhs-colourbox.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal colourBox = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "/PedalImages/jhs-colourbox.png", 49900, 33000, 120, 110, 60, true, false, "Top", true);
         pedalRepository.save(colourBox);
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(colourBox);
 
-        Pedal doubleBarrel = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "/PedalImages/jhs-doublebarrelv4.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal doubleBarrel = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "/PedalImages/jhs-doublebarrelv4.png", 49900, 33000, 110, 125, 50, true, false, "Top", true);
         pedalRepository.save(doubleBarrel);
         doubleBarrel.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(doubleBarrel);
@@ -104,7 +104,7 @@ public class DataLoader implements ApplicationRunner {
         elCapistan.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
         pedalRepository.save(elCapistan);
 
-        Pedal generationLoss = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "/PedalImages/cooper-genloss.png", 50000, null, 122, 67, 40, true, true, "side", true);
+        Pedal generationLoss = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "/PedalImages/cooper-genloss.png", 50000, null, 117, 94, 40, true, true, "side", true);
         pedalRepository.save(generationLoss);
         generationLoss.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}{add(cooperFX);}});
         pedalRepository.save(generationLoss);
@@ -114,12 +114,12 @@ public class DataLoader implements ApplicationRunner {
         blooper2.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
         pedalRepository.save(blooper2);
 
-        Pedal colourBox2 = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "/PedalImages/jhs-colourbox.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal colourBox2 = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "/PedalImages/jhs-colourbox.png", 49900, 33000, 120, 110, 60, true, false, "Top", true);
         pedalRepository.save(colourBox2);
         colourBox2.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(colourBox2);
 
-        Pedal doubleBarrel2 = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "/PedalImages/jhs-doublebarrelv4.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal doubleBarrel2 = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "/PedalImages/jhs-doublebarrelv4.png", 49900, 33000, 110, 125, 50, true, false, "Top", true);
         pedalRepository.save(doubleBarrel2);
         doubleBarrel2.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(doubleBarrel2);
@@ -146,7 +146,7 @@ public class DataLoader implements ApplicationRunner {
         elCapistan2.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
         pedalRepository.save(elCapistan2);
 
-        Pedal generationLoss2 = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "/PedalImages/cooper-genloss.png", 50000, null, 122, 67, 40, true, true, "side", true);
+        Pedal generationLoss2 = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "/PedalImages/cooper-genloss.png", 50000, null, 117, 94, 40, true, true, "side", true);
         pedalRepository.save(generationLoss2);
         generationLoss2.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}{add(cooperFX);}});
         pedalRepository.save(generationLoss2);
