@@ -109,6 +109,48 @@ public class DataLoader implements ApplicationRunner {
         generationLoss.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}{add(cooperFX);}});
         pedalRepository.save(generationLoss);
 
+        Pedal blooper2 = new Pedal("Blooper", "Fancy", "One of my favourites", true, PedalCategory.OTHER, EffectType.LOOPER, 5, "/PedalImages/chasebliss-blooper.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        pedalRepository.save(blooper2);
+        blooper2.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}});
+        pedalRepository.save(blooper2);
+
+        Pedal colourBox2 = new Pedal("Colour Box", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.PREAMP, 5, "/PedalImages/jhs-colourbox.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        pedalRepository.save(colourBox2);
+        colourBox2.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
+        pedalRepository.save(colourBox2);
+
+        Pedal doubleBarrel2 = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "/PedalImages/jhs-doublebarrelv4.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        pedalRepository.save(doubleBarrel2);
+        doubleBarrel2.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
+        pedalRepository.save(doubleBarrel2);
+
+        Pedal mt2w2 = new Pedal("MT-2w", "Metal Zone", "OOOFT!", false, PedalCategory.SATURATION, EffectType.DISTORTION, 4, "/PedalImages/boss-mt2w.png", 11900, 5000, 122, 67, 40, false, false, "Side", false);
+        pedalRepository.save(mt2w2);
+        mt2w2.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
+        pedalRepository.save(mt2w2);
+
+
+        Pedal ds12 = new Pedal("DS-1", "something", "industry standard", false, PedalCategory.SATURATION, EffectType.DISTORTION, 5, "/PedalImages/boss-ds1.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        pedalRepository.save(ds12);
+        ds12.setManufacturers(new ArrayList<Manufacturer>(){{add(boss);}});
+        pedalRepository.save(ds12);
+
+
+        Pedal deco2 = new Pedal("Deco", "Cool cool cool", "Love it", false, PedalCategory.SATURATION, EffectType.OVERDRIVE, 4, "/PedalImages/strymon-deco.png", 27900, 18500, 115, 102, 45, false, true, "top", true);
+        pedalRepository.save(deco2);
+        deco2.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
+        pedalRepository.save(deco2);
+
+        Pedal elCapistan2 = new Pedal("el Capistan", "Go from the sound of a pristine, studio-quality tape machine to the heavily fluctuating sound of a machine in need of service. Get the full bodied sound of fresh tape all the way to the gnarled qualities of worn out tape.", "Love it", false, PedalCategory.DELAY, EffectType.DIGITAL, 5, "/PedalImages/strymon-elcap.png", 29900, 22000, 115, 102, 45, false, true, "top", true);
+        pedalRepository.save(elCapistan2);
+        elCapistan2.setManufacturers(new ArrayList<Manufacturer>(){{add(strymon);}});
+        pedalRepository.save(elCapistan2);
+
+        Pedal generationLoss2 = new Pedal("Generation Loss", "really fancy", "reet gud", false, PedalCategory.MODULATION, EffectType.VIBRATO, 3, "/PedalImages/cooper-genloss.png", 50000, null, 122, 67, 40, true, true, "side", true);
+        pedalRepository.save(generationLoss2);
+        generationLoss2.setManufacturers(new ArrayList<Manufacturer>(){{add(ChaseBlissAudio);}{add(cooperFX);}});
+        pedalRepository.save(generationLoss2);
+
 
 //        BOARDS
         Board board1 = new Board("Andys board", 800, 500, andy);
@@ -120,15 +162,45 @@ public class DataLoader implements ApplicationRunner {
         boardRepository.save(board2);
 
 //        USER PEDALS ADD
-        andy.addPedal(ds1);
-        ds1.setUser(andy);
+        andy.addPedal(ds12);
+        ds12.setUser(andy);
         userRepository.save(andy);
-        pedalRepository.save(ds1);
+        pedalRepository.save(ds12);
 
-        andy.addPedal(deco);
-        deco.setUser(andy);
+        andy.addPedal(deco2);
+        deco2.setUser(andy);
         userRepository.save(andy);
-        pedalRepository.save(deco);
+        pedalRepository.save(deco2);
+
+        andy.addPedal(mt2w2);
+        mt2w2.setUser(andy);
+        userRepository.save(andy);
+        pedalRepository.save(mt2w2);
+
+        andy.addPedal(blooper2);
+        blooper2.setUser(andy);
+        userRepository.save(andy);
+        pedalRepository.save(blooper2);
+
+        andy.addPedal(elCapistan2);
+        elCapistan2.setUser(andy);
+        userRepository.save(andy);
+        pedalRepository.save(elCapistan2);
+
+        andy.addPedal(generationLoss2);
+        generationLoss2.setUser(andy);
+        userRepository.save(andy);
+        pedalRepository.save(generationLoss2);
+
+        andy.addPedal(colourBox2);
+        colourBox.setUser(andy);
+        userRepository.save(andy);
+        pedalRepository.save(colourBox2);
+
+        andy.addPedal(doubleBarrel2);
+        doubleBarrel.setUser(andy);
+        userRepository.save(andy);
+        pedalRepository.save(doubleBarrel2);
 
         kenny.addPedal(mt2w);
         mt2w.setUser(kenny);
