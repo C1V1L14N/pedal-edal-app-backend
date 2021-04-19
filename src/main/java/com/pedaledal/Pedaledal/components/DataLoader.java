@@ -77,7 +77,7 @@ public class DataLoader implements ApplicationRunner {
         blooper.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(colourBox);
 
-        Pedal doubleBarrel = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "", 49900, 33000, 122, 67, 40, true, false, "Top", true);
+        Pedal doubleBarrel = new Pedal("Double Barrel", "Very fancy", "One of my favourites", true, PedalCategory.SATURATION, EffectType.OVERDRIVE, 5, "/PedalImages/jhs-doublebarrelv4.png", 49900, 33000, 122, 67, 40, true, false, "Top", true);
         pedalRepository.save(doubleBarrel);
         doubleBarrel.setManufacturers(new ArrayList<Manufacturer>(){{add(jhs);}});
         pedalRepository.save(doubleBarrel);
